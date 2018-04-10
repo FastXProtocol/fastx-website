@@ -13,6 +13,7 @@ import { email, ethereumAddress, required, emailWithoutPlus } from "../../utils/
 // import { CountDown } from "../../components/CountDown";
 // import DocumentTitle = require("react-document-title");
 // import { CopyLink } from "../../components/CopyLink";
+import { Element } from 'react-scroll';
 import {
   InputWrapper, InputLabel, LandingWrapper, WhiteLink,
   FieldError, Input, Heading, CountDownWrapper,
@@ -126,7 +127,7 @@ const LandingPagePresentational: React.StatelessComponent<PropsType> = (props: P
             </ImageWrapper>
           </Column>
         </TintedPanel>
-
+        <Element name="tech">
         <Panel>
           <Column>
             <LogoImage src="/images/gear.png" />
@@ -138,7 +139,7 @@ const LandingPagePresentational: React.StatelessComponent<PropsType> = (props: P
             <Copy>Once done with the game, players can exit by withdrawing their assets back to Ethereum.</Copy>
           </Column>
         </Panel>
-
+        </Element>
         <BorderlessPanel>
             <DiagramImage src="/images/fastx_diagram.jpg" style={{maxWidth: "1007px", width: "100%"}}/>
         </BorderlessPanel>
@@ -189,8 +190,8 @@ const LandingPage = compose(
       props.setSubmissionError(undefined);
       const {referrerId} = props.match.params; // can be undefined
       try {
-        const result = await props.createUser({variables: {email, referrerId } });
-        props.setNewUser(result.data.createUser);
+        // const result = await props.createUser({variables: {email, referrerId } });
+        // props.setNewUser(result.data.createUser);
         props.setHasSucceeded(true);
       } catch (error) {
         props.setSubmissionError("Email is already submitted.");
