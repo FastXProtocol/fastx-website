@@ -100,7 +100,7 @@ export const Button = styled.button`
   font-weight: bold;
   text-align: center;
   border-radius: 4px;
-  background-color: #04c5c4;
+  background-color: #009c9b;
   color: ${COLORS.text};
   outline: none;
   height: 55px;
@@ -123,16 +123,15 @@ export const YellowButton = Button.extend`
 `;
 
 export const TopClearButton = Button.extend`
-  padding: 0;
   float: right;
   position: absolute;
   top: 25px;
   right: 40px;
-  width: 216px;
   height: 50px;
   margin-top: 0;
   color: white;
   font-size: 12px;
+  box-shadow: unset;
   background-color: #008786;
   &:hover {
     background-color: rgba(28,83,106,0.9);
@@ -336,12 +335,12 @@ export const DiagramImage = PanelImage.extend`
   ${media.phone`width: 300px;`}
 `;
 
-export const CalendarImage = PanelImage.extend`
-  width: 250px;
+export const WorkflowImage = PanelImage.extend`
+  width: 400px;
 `;
 
 export const LogoImage = PanelImage.extend`
-  width: 270px;
+  width: 300px;
 `;
 
 export const Footer = styled.div`

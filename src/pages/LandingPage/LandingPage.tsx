@@ -7,9 +7,7 @@ import { compose, withHandlers, withState } from "recompose";
 import { withRouter } from "react-router";
 import * as _ from "lodash";
 import * as queryString from "query-string";
-import { Field, reduxForm, formValueSelector } from "redux-form";
 import { connect } from "react-redux";
-import { email, ethereumAddress, required, emailWithoutPlus } from "../../utils/validators";
 // import { CountDown } from "../../components/CountDown";
 // import DocumentTitle = require("react-document-title");
 // import { CopyLink } from "../../components/CopyLink";
@@ -20,7 +18,7 @@ import {
   SubHeading, DeliveryText, SignupForm, FormError,
   Button, Explanation, StyledLink,
   Panel, Column, Header, Copy, PanelImage,
-  CalendarImage, TintedPanel, Footer, ConfirmEmail, LogoImage, VerticalPanel, 
+  WorkflowImage, TintedPanel, Footer, LogoImage, VerticalPanel, 
   YellowButton, TopClearButton, ImageWrapper, InnerImage, BorderlessPanel, 
   DiagramImage, LargeCopy, LargeStyledItem, LargeStyledLink
 } from "./LandingPageStyles";
@@ -43,7 +41,7 @@ interface PropsType {
   match: { params: { referrerId?: string } };
   submissionError: string | undefined;
   hasSucceeded: string | undefined;
-  createUser: (variables: any) => any;
+//   createUser: (variables: any) => any;
 }
 
 const renderField = ({
@@ -69,14 +67,13 @@ const TelegramButton = (props) => {
   return (
 
     <form method="get" action="https://t.me/joinchat/H4r43A75jNkxQPasquwwCg" target="_blank">
-        <Button type="submit">Talk to us on Telegram</Button>
+        <Button type="submit">Chat on Telegram</Button>
     </form>
 
   );
 };
 
 const LandingPagePresentational: React.StatelessComponent<PropsType> = (props: PropsType) => {
-  const { handleSubmit, pristine, reset, submitting } = props.formProps;
   const deadline =  moment("Nov 11 23:59:00 -0800", "MMM DD hh:mm:ss Z"); 
 
   return (
@@ -84,27 +81,12 @@ const LandingPagePresentational: React.StatelessComponent<PropsType> = (props: P
       <div>
           <Element name="slogan">
         <LandingWrapper>
-          <TelegramButton component={TopClearButton} />
-          {/* <Heading>Join the Frontier</Heading> */}
-          <SubHeading>An open protocol for Fast, Cheap, yet Secure Non-Fungible Token exchange on Ethereum.</SubHeading>
-          {props.hasSucceeded &&
-            <ConfirmEmail>Thanks for signing up! Stay tuned for our latest updates!</ConfirmEmail>
-          }
-          {!props.hasSucceeded &&
-            <SignupForm onSubmit={handleSubmit}>
-              {props.submissionError && <FormError>{props.submissionError}</FormError>} 
-              <Field
-                name="email"
-                label="Email"
-                component={renderField}
-                type="text"
-                validate={[required, email]}
-              />
-              <Button type="submit">
-                {submitting ? "Submitting..." : `Subscribe Now`}
-              </Button>
-            </SignupForm>
-          }
+        <TelegramButton component={TopClearButton} />
+        {/* <Heading>Join the Frontier</Heading> */}
+        <SubHeading>An open protocol for Fast, yet Secured crypto-goods trading on Ethereum.</SubHeading>
+        <SignupForm action="https://goo.gl/forms/1nzxhsRsuQlXRfYb2" target="_blank">
+                <Button type="submit">Give it try!</Button>
+        </SignupForm>
         </LandingWrapper>
           </Element>
         <Panel>
@@ -125,9 +107,7 @@ const LandingPagePresentational: React.StatelessComponent<PropsType> = (props: P
             <Copy isLight={true}>Running as sidechains, Trust and Security of dApps and games based on FastX is guaranteed by Ethereum blockchain.</Copy>
           </Column>
           <Column>
-            <ImageWrapper>
-              <InnerImage src="/images/fastx_logo.svg" />
-            </ImageWrapper>
+            <WorkflowImage src="/images/fastx_logo.svg" />
           </Column>
         </TintedPanel>
         <Element name="tech">
@@ -156,13 +136,13 @@ const LandingPagePresentational: React.StatelessComponent<PropsType> = (props: P
             <Copy isLight={true}>FEX can be used for transaction fees, service provider's deposit, and decentralized governance.</Copy>
           </Column>
           <Column>
-            <CalendarImage src="/images/fastx_logo.svg" />
+            <LogoImage src="/images/fastx_logo.svg" />
           </Column>
         </TintedPanel>
           </Element>
 
         <VerticalPanel>
-          <LargeCopy>Let’s build the tokenized creative economy...and have fun together!</LargeCopy>
+          <LargeCopy>We're hiring and looking for collaborators! Reach out to us on Telegram.</LargeCopy>
           <TelegramButton component={Button} />
         </VerticalPanel>
 
@@ -195,20 +175,6 @@ const LandingPage = compose(
   withState("submissionError", "setSubmissionError", undefined),
   withState("hasSucceeded", "setHasSucceeded", false),
   withState("newUser", "setNewUser", undefined),
-  withHandlers({
-    onSubmit: (props: any) => async ({ email }) => {
-      props.setSubmissionError(undefined);
-      const {referrerId} = props.match.params; // can be undefined
-      try {
-        // const result = await props.createUser({variables: {email, referrerId } });
-        // props.setNewUser(result.data.createUser);
-        props.setHasSucceeded(true);
-      } catch (error) {
-        props.setSubmissionError("Email is already submitted.");
-      }
-    },
-  }),
-  reduxForm({propNamespace: "formProps", form: "signupForm" }),
 )(LandingPagePresentational);
 
 export {LandingPage};
