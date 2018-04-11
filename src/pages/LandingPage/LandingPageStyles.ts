@@ -97,7 +97,7 @@ export const Button = styled.button`
   padding: 15px 35px;
   font-size: 16px;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: bold;
   text-align: center;
   border-radius: 4px;
   background-color: #04c5c4;
@@ -111,7 +111,7 @@ export const Button = styled.button`
 
   transition: all 0.3s ease 0s;
   &:hover {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(28,83,106,0.9);
   }
 `;
 
@@ -123,22 +123,23 @@ export const YellowButton = Button.extend`
 `;
 
 export const TopClearButton = Button.extend`
+  padding: 0;
   float: right;
   position: absolute;
-  top: 0px;
+  top: 25px;
   right: 40px;
   width: 216px;
   height: 50px;
+  margin-top: 0;
   color: white;
   font-size: 12px;
-  background-color: transparent;
+  background-color: #008786;
   &:hover {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(28,83,106,0.9);
   }
 
   ${media.tablet`
-    left: 50%;
-    margin-left: -108px;
+    display:none;
   `}
 
 `;

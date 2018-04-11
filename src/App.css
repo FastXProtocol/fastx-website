@@ -43,7 +43,7 @@ nav .logo span img {
   }
 }
 nav .links-container {
-  text-align: right;
+  text-align: center;
   padding-top: 14px;
 }
 nav .links-container a {
@@ -122,4 +122,28 @@ nav .links-container a.email-link {
 }
 .email {
   background-image: url("/images/email-icon.svg");
+}
+.telegram {
+  background-image: url("/images/telegram.svg");
+}
+.footer .links-container {
+  margin-top: -10px;
+  float: right;
+}
+@media screen and (max-width: 768px) {
+  .footer .links-container {
+    margin-top: 10px;
+  }
+}
+.footer .links-container a {
+  font-weight: 400;
+  color: #c2f2ff;
+  margin-left: 20px;
+  font-size: 16px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  -webkit-transition: color 200ms ease-in-out;
+  -moz-transition: color 200ms ease-in-out;
+  -o-transition: color 200ms ease-in-out;
+  -ms-transition: color 200ms ease-in-out;
+  transition: color 200ms ease-in-out;
 }

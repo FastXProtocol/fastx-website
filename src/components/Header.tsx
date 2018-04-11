@@ -13,12 +13,9 @@ export class Header extends React.Component {
                 <img src="/images/fastx_logo_text.svg" alt="FastX Protocol" />
             </a>
             <div className="links-container">
-                <a href={`${FASTX_WEBSITE}`}>Home</a>
-                <a href=""><Link to="tech" spy={true} smooth={true} duration={500}>How It Works</Link></a>
-                <a href="mailto:hello@fastx.pro" className="email-link">hello@fastx.pro</a>
-                <a href="https://twitter.com/FastXProtocol" target="_blank"><div className="social-icon twitter"/></a>
-                <a href="https://github.com/FastXProtocol" target="_blank"><div className="social-icon github-social"/></a>
-                <a href="mailto:hello@fastx.pro"><div className="social-icon email"/></a>
+                <Link href="#" to="slogan" spy={true} smooth={true} duration={500}>Home</Link>
+                <Link href="#" to="tech" spy={true} smooth={true} duration={500}>How It Works</Link>
+                <Link href="#" to="token" spy={true} smooth={true} duration={500}>FEX Token</Link>
             </div>
             </div>
         </nav>

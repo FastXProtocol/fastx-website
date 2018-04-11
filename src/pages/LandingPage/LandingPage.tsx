@@ -67,9 +67,11 @@ const renderField = ({
 const TelegramButton = (props) => {
   const Button = props.component;
   return (
+
     <form method="get" action="https://t.me/joinchat/H4r43A75jNkxQPasquwwCg" target="_blank">
-      <Button type="submit">Talk to us on Telegram</Button>
+        <Button type="submit">Talk to us on Telegram</Button>
     </form>
+
   );
 };
 
@@ -80,8 +82,9 @@ const LandingPagePresentational: React.StatelessComponent<PropsType> = (props: P
   return (
     // <DocumentTitle title={STRINGS.tokenName}>
       <div>
+          <Element name="slogan">
         <LandingWrapper>
-          {/* <TelegramButton component={TopClearButton} /> */}
+          <TelegramButton component={TopClearButton} />
           {/* <Heading>Join the Frontier</Heading> */}
           <SubHeading>An open protocol for Fast, Cheap, yet Secure Non-Fungible Token exchange on Ethereum.</SubHeading>
           {props.hasSucceeded &&
@@ -103,7 +106,7 @@ const LandingPagePresentational: React.StatelessComponent<PropsType> = (props: P
             </SignupForm>
           }
         </LandingWrapper>
-
+          </Element>
         <Panel>
           <Column>
             <Header>The Status Quo</Header>
@@ -139,11 +142,13 @@ const LandingPagePresentational: React.StatelessComponent<PropsType> = (props: P
             <Copy>Once done with the game, players can exit by withdrawing their assets back to Ethereum.</Copy>
           </Column>
         </Panel>
-        </Element>
+
         <BorderlessPanel>
             <DiagramImage src="/images/fastx_diagram.jpg" style={{maxWidth: "1007px", width: "100%"}}/>
         </BorderlessPanel>
+        </Element>
 
+        <Element name="token">
         <TintedPanel>
           <Column>
             <Header isLight={true}>FEX Token</Header>
@@ -154,21 +159,26 @@ const LandingPagePresentational: React.StatelessComponent<PropsType> = (props: P
             <CalendarImage src="/images/fastx_logo.svg" />
           </Column>
         </TintedPanel>
-
+          </Element>
 
         <VerticalPanel>
           <LargeCopy>Let’s build the tokenized creative economy...and have fun together!</LargeCopy>
-          {/* <TelegramButton component={YellowButton} /> */}
+          <TelegramButton component={Button} />
         </VerticalPanel>
 
-        <Footer>
+        <Footer className="footer">
           <div className="container">
           <div className="row">
           <div className="col-sm-6">
-            &copy; 2018 FastX Inc.
+            &copy; 2018 FastX Foundation.
           </div>
           <div className="col-sm-6">
-             <WhiteLink href="mailto:hello@fastx.pro" target="_top"> hello@fastx.pro </WhiteLink>
+            <div className="links-container">
+                <a href="https://t.me/joinchat/H4r43A75jNkxQPasquwwCg" target="_blank"><div className="social-icon telegram"/></a>
+                <a href="https://twitter.com/FastXProtocol" target="_blank"><div className="social-icon twitter"/></a>
+                <a href="https://github.com/FastXProtocol" target="_blank"><div className="social-icon github-social"/></a>
+                <a href="mailto:hello@fastx.pro"><div className="social-icon email"/></a>
+            </div>
           </div>
           </div>
           </div>
