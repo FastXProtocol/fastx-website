@@ -293,9 +293,9 @@ export const ImageWrapper = styled.div`
 `;
 
 export const InnerImage = styled.img`
-  margin-top: 54px;
+  margin-top: 72px;
   margin-left: 0;
-  width: 358px;
+  width: 350px;
 
   ${media.phone`
     margin-top: -1px;

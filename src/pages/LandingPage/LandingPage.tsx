@@ -123,7 +123,7 @@ const LandingPagePresentational: React.StatelessComponent<PropsType> = (props: P
           </Column>
           <Column>
             <ImageWrapper>
-              <InnerImage src="/images/fastx_logo_big.svg" />
+              <InnerImage src="/images/fastx_logo.svg" />
             </ImageWrapper>
           </Column>
         </TintedPanel>
@@ -151,7 +151,7 @@ const LandingPagePresentational: React.StatelessComponent<PropsType> = (props: P
             <Copy isLight={true}>FEX can be used for transaction fees, service provider's deposit, and decentralized governance.</Copy>
           </Column>
           <Column>
-            <CalendarImage src="/images/fastx_logo_big.svg" />
+            <CalendarImage src="/images/fastx_logo.svg" />
           </Column>
         </TintedPanel>
 

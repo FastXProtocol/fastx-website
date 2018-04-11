@@ -10,7 +10,7 @@ export class Header extends React.Component {
         <nav>
             <div className="container">
             <a href={`${FASTX_WEBSITE}`} target="_blank" className="logo">
-                <img src="/images/fx-logo.svg" alt="FastX Protocol" />
+                <img src="/images/fastx_logo_text.svg" alt="FastX Protocol" />
             </a>
             <div className="links-container">
                 <a href={`${FASTX_WEBSITE}`}>Home</a>
