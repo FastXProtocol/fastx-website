@@ -83,9 +83,9 @@ const LandingPagePresentational: React.StatelessComponent<PropsType> = (props: P
         <LandingWrapper>
         <TelegramButton component={TopClearButton} />
         {/* <Heading>Join the Frontier</Heading> */}
-        <SubHeading>An open protocol for Fast, yet Secured crypto-goods trading on Ethereum.</SubHeading>
-        <SignupForm action="https://goo.gl/forms/1nzxhsRsuQlXRfYb2" target="_blank">
-                <Button type="submit">Give it try!</Button>
+        <SubHeading>An open protocol for Fast, Safe and Secure crypto-goods trading on Ethereum.</SubHeading>
+        <SignupForm action="https://fastxprotocol.github.io" target="_blank">
+                <Button type="submit">Give it a try!</Button>
         </SignupForm>
         </LandingWrapper>
           </Element>

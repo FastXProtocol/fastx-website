@@ -10,8 +10,6 @@ import { LandingPage } from "./pages/LandingPage/LandingPage";
 const reduxDevtoolsMiddleware =
   (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__();
 
-// const logo = require('./logo.svg');
-
 const store = createStore(
   combineReducers(
     { form: formReducer }
