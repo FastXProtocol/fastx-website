@@ -13,13 +13,9 @@ const HeadingInfoContainer = tw.div`flex flex-col items-center`;
 const HeadingDescription = tw.p`mt-4 font-medium text-gray-600 text-center max-w-lg`;
 
 const ImageContainer = styled.div`
-  ${tw`mt-10 md:mx-3 lg:mx-6 w-full rounded flex items-center max-w-full`}
+  ${tw`mt-10 w-full rounded flex items-center max-w-full`}
 `;
-const Image = styled.img((props) => [
-  props.imageRounded && tw`rounded`,
-  props.imageBorder && tw`border`,
-  props.imageShadow && tw`shadow`,
-]);
+const Image = tw.img`block max-w-full mx-auto `;
 
 const DecoratorBlob1 = tw(
   SvgDecoratorBlob1
